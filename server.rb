@@ -2,7 +2,7 @@ require 'sinatra'
 require 'json'
 
 require 'sinatra/activerecord' # for db
-require 'sinatra/namespace' # for api versioning namespace, made availble by sinatra-contrib
+require 'sinatra/namespace' # for api versioning namespace, made available by sinatra-contrib
 
 set :database, {adapter: "sqlite3", database: "app.sqlite3"}
 
