@@ -4,6 +4,13 @@ require 'json'
 require 'sinatra/activerecord' # for db
 require 'sinatra/namespace' # for api versioning namespace, made available by sinatra-contrib
 
+# Configure LOGS
+configure do
+  file = File.new("log/app.log", 'a+')
+  file.sync = true
+  use Rack::CommonLogger, file
+end
+
 set :database, {adapter: "sqlite3", database: "app.sqlite3"}
 
 # MODEL
